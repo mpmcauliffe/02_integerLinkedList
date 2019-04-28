@@ -8,6 +8,8 @@ public class Main {
         Integer two = 2;
         Integer three = 3;
         Integer four = 4;
+        Integer seven = 7;
+        Integer six = 6;
 
         IntegerLinkedList list = new IntegerLinkedList();
         list.insertSorted(three);
@@ -17,6 +19,10 @@ public class Main {
         list.insertSorted(one);
         list.printList();
         list.insertSorted(four);
+        list.printList();
+        list.insertSorted(seven);
+        list.printList();
+        list.insertSorted(six);
         list.printList();
     }
 }

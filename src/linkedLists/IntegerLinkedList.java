@@ -26,8 +26,27 @@ public class IntegerLinkedList {
 
     public void insertSorted(Integer value) {
 
-        // add your code here
+        // HEAD -> 1 -> 2 -> 3 ... -> null
 
+
+        if (head == null || head.getValue() >= value) {
+            addToFront(value);
+            return;
+        }
+
+        IntegerNode current = head.getNext();
+        IntegerNode previous = head;
+
+        while (current != null && current.getValue() < value) {
+            previous = current;
+            current = current.getNext();
+        }
+
+        IntegerNode newNode = new IntegerNode(value);
+        newNode.setNext(current);
+        previous.setNext(newNode);
+
+        size++;
     }
 
     public int getSize() {
@@ -40,13 +59,13 @@ public class IntegerLinkedList {
 
     public void printList() {
         IntegerNode current = head;
-        System.out.print("HEAD -> ");
+        System.out.print("HEAD => ");
         while (current != null) {
             System.out.print(current);
             System.out.print(" -> ");
             current = current.getNext();
         }
-        System.out.println("null");
+        System.out.println("null\n");
     }
 
 }
